@@ -14,7 +14,7 @@
 #header{
     padding-Top: 2.5rem ;
     margin     : auto;
-    max-width  : 60%;
+    max-width  : 50%;
 }
 
 #headerDiv, .input-task{
@@ -186,7 +186,7 @@ footer{
     color: rgb(163, 163, 197);
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   #header {
     height         : 8rem;
     background-size: 3px;
@@ -194,6 +194,23 @@ footer{
   #headerText{
     color         : red;
     letter-spacing: 0.3em;
+}
+#addMeBtnText{
+    font-size: 0.8rem;
+}
+#wrapper{
+    background-image : url('./images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size  : cover;
+    height           : 10.0rem;
+}
+.controls{
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
 
+}
+.controls .clear-all-btn{
+    margin-top: 1rem;
 }
 }
