@@ -3,6 +3,8 @@ const toggle  = document.getElementById('moonImg');
 const body    = document.querySelector('body');
 const wrapper = document.getElementById('wrapper');
 const control = document.querySelector('.controls, li');
+const list    = document.getElementsByClassName('.task-item');
+const ul      = document.querySelector('ul');
 
 toggle.addEventListener('click', function() {
   if (this.src.includes('icon-moon')) {
@@ -12,6 +14,8 @@ toggle.addEventListener('click', function() {
     body.style.background               = 'hsl(237, 14%, 26%)';
     control.style.backgroundColor       = 'hsl(237, 14%, 26%)';
     listContainer.style.backgroundColor = 'hsl(237, 14%, 26%)';
+    list.style.backgroundColor          = 'hsl(237, 14%, 26%)';
+    ul.style.backgroundColor            = 'hsl(237, 14%, 26%)';
     body.style.color                    = 'white';
   } else {
     this.src = './images/icon-moon.svg';
@@ -20,8 +24,12 @@ toggle.addEventListener('click', function() {
     body.style.background               = 'hsl(233, 11%, 84%)';
     control.style.backgroundColor       = 'hsl(233, 11%, 84%)';
     listContainer.style.backgroundColor = 'hsl(233, 11%, 84%)';
+    list.style.backgroundColor          = 'hsl(233, 11%, 84%)';
+    ul.style.backgroundColor            = 'hsl(233, 11%, 84%)';
     body.style.color = 'hsl(235, 21%, 11%)';
   }
+
+  
 });
 
 function toggleMode() {
