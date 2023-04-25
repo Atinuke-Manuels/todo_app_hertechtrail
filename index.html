@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <meta name    = "viewport" content = "width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel = "icon" type = "image/png" sizes = "32x32" href = "./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+  <link   rel = "stylesheet" href = "style.css">
+  <script src = "script.js" defer></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%);   }
+  </style>
+</head>
+<body>
+  <Section id  = "wrapper">
+  <form    id  = "header">
+  <h3      id  = "date"></h3>
+  <div     id  = "headerDiv">
+  <h1      id  = "headerText">TODO</h1>
+  <image   src = "./images/icon-moon.svg" id = "moonImg"></image>
+    </div>
+    <div    class = "input-task">
+    <input  type  = "text" placeholder = "Add a new task here" id = "inputField">
+    <button id    = "addMeBtn" type    = "submit">Add+</button>
+    </div>
+    <ul   class = "task-list"></ul>
+    <div  class = "controls">
+    <div  class = "filters">
+    <span id    = "active" ></span>Items left
+    <span id    = "all" class              = "active" style = "margin-left: 3rem;">All</span>
+    <span id    = "completed">Completed</span>
+    <span id    = "clearCompleted" onclick = "clearCheckedTasks()">Clear Completed</span>
+      </div>
+      <button class = "clear-all-btn">Clear All</button>
+    </div>
+  </form>
+  </Section>
+
+
+  <div class = "attribution">
+    <footer>
+    <small    id         = "footerText">
+    Challenge by <a href = "https://www.frontendmentor.io?ref=challenge" target = "_blank" class="anchor">Frontend Mentor</a>.
+      </small>
+    <small id = "footerText">Coded by <a href = "#" ><span class="anchor">Atinuke Adeshola-Manuels</span></a>.</small>
+</footer>
+  </div>
+</body>
+</html>

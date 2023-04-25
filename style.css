@@ -1,0 +1,175 @@
+*{
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    background-image : url('./images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size  : cover;
+    height           : 15.6rem;
+}
+
+#header{
+    padding-Top: 2.5rem ;
+    margin     : auto;
+    max-width  : 50%;
+}
+
+#headerDiv, .input-task{
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+#date{
+    display        : flex;
+    justify-content: center;
+    font-size      : 1.45em;
+    color          : wheat;
+}
+
+#inputField{
+    width        : 82%;
+    margin       : 1rem 0;
+    font-size    : 1.2em;
+    padding      : 0.5rem;
+    border-radius: 5px;
+    border       : none;
+    outline      : none;
+}
+
+ul, li{
+    list-style: none;
+}
+.controls, li{
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    padding         : 10px 4px 4px 4px;
+    background-color: white;
+    border-radius   : 5px;
+}
+
+#addMeBtn{
+    width        : 16%;
+    margin       : 1rem 0;
+    font-size    : 1.2em;
+    padding      : 0.5rem;
+    border-radius: 5px;
+    border       : none;
+    outline      : none;
+    cursor       : pointer;
+    background   : rgb(177, 121, 177);
+}
+#addMeBtn:hover{
+    background: purple;
+}
+
+#headerText{
+    color         : white;
+    letter-spacing: 0.3em;
+
+}
+
+#moonImg{
+    max-width : 1.5rem;
+    max-height: 1.5rem;
+}
+label{
+    display    : flex;
+    gap        : 0.5em;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    outline      : none;
+    height       : 1rem;
+    width        : 1rem;
+    border-radius: 50%;
+    accent-color : rgb(170, 138, 170);
+}
+.controls{
+    display        : flex;
+    justify-content: space-between;
+    padding        : 16px 0;
+    border-bottom  : 1px solid #ccc;
+}
+.filters span{
+    margin   : 0 8px;
+    cursor   : pointer;
+    font-size: 17px;
+}
+
+.filters span:hover{
+    color: darkorange;
+}
+.controls .clear-all-btn{
+    outline      : none;
+    border       : none;
+    color        : white;
+    border-radius: 4px;
+    padding      : 7px 13px;
+    background   : red;
+    cursor       : pointer;
+}
+.task-list{
+    margin          : 15px 0px 0px 0px;
+    padding         : 4px ;
+    background-color: white;
+    border-radius   : 5px;
+}
+
+.task-list .task{
+    list-style   : none;
+    font-size    : 17px;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #ccc;
+}
+.task-list li {
+  font-size    : 18px;
+  padding      : 8px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
+.task-item {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.dark-mode .task-item {
+  background-color: hsl(237, 14%, 26%);
+}
+
+footer{
+  position: absolute;
+  bottom  : 0;
+  left    : 0;
+}
+
+#footerText{
+    font-size: 14px;
+}
+
+.dark-mode #footerText{
+    color: gold;
+}
+
+.dark-mode .anchor{
+    color: rgb(163, 163, 197);
+}
+
+@media screen and (max-width: 480px) {
+  #header {
+    height         : 8rem;
+    background-size: 3px;
+  }
+  #headerText{
+    color         : red;
+    letter-spacing: 0.3em;
+
+}
+}
