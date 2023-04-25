@@ -112,6 +112,7 @@ input[type="checkbox"] {
     padding      : 7px 13px;
     background   : red;
     cursor       : pointer;
+    margin-right : 0.2rem;
 }
 .task-list{
     margin          : 15px 0px 0px 0px;
@@ -143,6 +144,12 @@ input[type="checkbox"]:checked + label {
 .dark-mode .task-item {
   background-color: hsl(237, 14%, 26%);
 }
+
+ul.dark li {
+  background-color: #333;
+  color: #fff;
+}
+
 
 footer{
   position: absolute;

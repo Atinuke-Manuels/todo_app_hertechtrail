@@ -3,7 +3,6 @@ const toggle  = document.getElementById('moonImg');
 const body    = document.querySelector('body');
 const wrapper = document.getElementById('wrapper');
 const control = document.querySelector('.controls, li');
-const list    = document.querySelector('.task-item');
 
 toggle.addEventListener('click', function() {
   if (this.src.includes('icon-moon')) {
@@ -21,10 +20,20 @@ toggle.addEventListener('click', function() {
     body.style.background               = 'hsl(233, 11%, 84%)';
     control.style.backgroundColor       = 'hsl(233, 11%, 84%)';
     listContainer.style.backgroundColor = 'hsl(233, 11%, 84%)';
-
     body.style.color = 'hsl(235, 21%, 11%)';
   }
 });
+
+function toggleMode() {
+  const ul = document.querySelector('ul');
+  const body = document.querySelector('body');
+  if (body.classList.contains('dark-mode')) {
+    ul.classList.add('dark');
+  } else {
+    ul.classList.remove('dark');
+  }
+}
+
 
     //code to display current date
 
@@ -49,6 +58,8 @@ const clearAll      = document.querySelector('.clear-all-btn');
 
     // Retrieve list items from local storage
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+const newTask = document.createElement('li');
+  newTask.classList.add('task-item');  
 
     // Add existing tasks to the list
 for (let i = 0; i < tasks.length; i++) {
