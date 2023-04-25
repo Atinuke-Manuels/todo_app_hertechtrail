@@ -14,7 +14,7 @@
 #header{
     padding-Top: 2.5rem ;
     margin     : auto;
-    max-width  : 50%;
+    max-width  : 60%;
 }
 
 #headerDiv, .input-task{
@@ -30,7 +30,7 @@
 }
 
 #inputField{
-    width        : 82%;
+    width        : 82.5%;
     margin       : 1rem 0;
     font-size    : 1.2em;
     padding      : 0.5rem;
@@ -52,15 +52,18 @@ ul, li{
 }
 
 #addMeBtn{
-    width        : 16%;
+    width        : 16.5%;
     margin       : 1rem 0;
-    font-size    : 1.2em;
+    font-size    : 1.1em;
     padding      : 0.5rem;
     border-radius: 5px;
     border       : none;
     outline      : none;
     cursor       : pointer;
     background   : rgb(177, 121, 177);
+}
+#addMeBtnText{
+    font-size: 1.1rem;
 }
 #addMeBtn:hover{
     background: purple;
