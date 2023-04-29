@@ -1,4 +1,4 @@
-    //code to create light and dark mode
+      //code to create light and dark mode
 const toggle  = document.getElementById('moonImg');
 const body    = document.querySelector('body');
 const wrapper = document.getElementById('wrapper');
@@ -26,14 +26,14 @@ toggle.addEventListener('click', function() {
     listContainer.style.backgroundColor = 'hsl(233, 11%, 84%)';
     list.style.backgroundColor          = 'hsl(233, 11%, 84%)';
     ul.style.backgroundColor            = 'hsl(233, 11%, 84%)';
-    body.style.color = 'hsl(235, 21%, 11%)';
+    body.style.color                    = 'hsl(235, 21%, 11%)';
   }
 
   
 });
 
 function toggleMode() {
-  const ul = document.querySelector('ul');
+  const ul   = document.querySelector('ul');
   const body = document.querySelector('body');
   if (body.classList.contains('dark-mode')) {
     ul.classList.add('dark');
@@ -43,33 +43,28 @@ function toggleMode() {
 }
 
 
-    //code to display current date
+      //code to display current date
 
-let newDate = document.getElementById('date');
+const newDate           = document.getElementById('date');
+const date              = new Date();
+const options           = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+const currentDate       = new Intl.DateTimeFormat('en-GB', options).format(date);
+      newDate.innerHTML = currentDate;
 
-const date = new Date();
 
-let day   = date.getDate();
-let month = date.getMonth() + 1;
-let year  = date.getFullYear();
-
-let currentDate = `${day}-${month}-${year}`;
-
-newDate.innerHTML = currentDate;
-
-    //code to control task input
+      //code to control task input
 
 const taskInput     = document.getElementById('inputField');
 const addMeBtn      = document.getElementById('addMeBtn');
 const listContainer = document.querySelector('.task-list');
 const clearAll      = document.querySelector('.clear-all-btn');
 
-    // Retrieve list items from local storage
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      // Retrieve list items from local storage
+let   tasks   = JSON.parse(localStorage.getItem('tasks')) || [];
 const newTask = document.createElement('li');
   newTask.classList.add('task-item');  
 
-    // Add existing tasks to the list
+      // Add existing tasks to the list
 for (let i = 0; i < tasks.length; i++) {
 const newTask = document.createElement('li');
   newTask.classList.add('task-item');  
@@ -92,9 +87,9 @@ const newTask = document.createElement('li');
   listContainer.appendChild(newTask);
 }
 
-    // Add new tasks to the list
+      // Add new tasks to the list
 addMeBtn.addEventListener('click', function(event) {
-      //to ensure each new task appears on the window till deleted.
+        //to ensure each new task appears on the window till deleted.
   event.preventDefault();
   let userTask = taskInput.value.trim();
   if (userTask) {
@@ -105,7 +100,7 @@ addMeBtn.addEventListener('click', function(event) {
       <label for     = "task${tasks.length}">${userTask}</label>
     `;
 
-      //Create a delete button and append same to each list item
+        //Create a delete button and append same to each list item
     const deleteButton       = document.createElement("button");
           deleteButton.style = "background-color: red; color: white; border: none; padding: 3px; border-radius: 5px;"
     deleteButton.classList.add("delete");
@@ -124,11 +119,11 @@ addMeBtn.addEventListener('click', function(event) {
     taskInput.value = '';
   }
 updateLocalStorage();
-    //to update the count of active tasks
+      //to update the count of active tasks
   updateTaskCount();
 });
 
-  // function to count active tasks 
+    // function to count active tasks 
 function updateStatus(selectedTask){
     let taskName = selectedTask.parentElement.lastElementChild;
     if(selectedTask.checked){
@@ -142,12 +137,12 @@ function updateStatus(selectedTask){
     updateTaskCount();
 }
 
-    // Update local storage
+      // Update local storage
 function updateLocalStorage() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-  //Clears all tasks in the list
+    //Clears all tasks in the list
 clearAll.addEventListener('click', function() {
   if (confirm('Do you really want to clear all tasks?')) {
     listContainer.innerHTML = '';
@@ -158,7 +153,7 @@ clearAll.addEventListener('click', function() {
 
 });
 
-    //clears all completed/checked Items
+      //clears all completed/checked Items
   function clearCheckedTasks() {
   const listItems = listContainer.querySelectorAll('li');
   listItems.forEach(function(item) {
@@ -171,7 +166,7 @@ clearAll.addEventListener('click', function() {
   updateTaskCount();
 }
 
-    //counts the active todo Items
+      //counts the active todo Items
 function updateTaskCount() {
   const uncheckedTasks               = document.querySelectorAll('li:not(.checked)');
   const taskCount                    = uncheckedTasks.length;
@@ -179,7 +174,7 @@ function updateTaskCount() {
         taskCountElement.textContent = taskCount;
 }
 
-// This helps display all completed tasks.
+  // This helps display all completed tasks.
 function showCompletedTasks() {
   const taskItems = document.querySelectorAll('.task-item');
 
@@ -194,8 +189,9 @@ function showCompletedTasks() {
     }
   });
 }
+showCompletedTasks() ;
 
-//To show all task again
+  //To show all task again
 function showAllTasks() {
   const taskItems = document.querySelectorAll('.task-item');
   taskItems.forEach(task => {
@@ -203,20 +199,21 @@ function showAllTasks() {
   });
 }
 
+showAllTasks();
 
-function showCompleted() {
-  const taskItems = document.querySelectorAll('.task-item');
-  taskItems.forEach(task => {
-    const checkbox = task.querySelector('input[type="checkbox"]');
-    const label = task.querySelector('label');
-    if (checkbox.checked) {
-      task.style.display = 'none';
-    } else {
-      task.style.display = 'flex';
-    }
-  });
-  showAllTasks();
-}
+  // function showCompleted() {
+  //   const taskItems = document.querySelectorAll('.task-item');
+  //   taskItems.forEach(task => {
+  //     const checkbox = task.querySelector('input[type="checkbox"]');
+  //     const label = task.querySelector('label');
+  //     if (checkbox.checked) {
+  //       task.style.display = 'none';
+  //     } else {
+  //       task.style.display = 'flex';
+  //     }
+  //   });
+  //   showAllTasks();
+  // }
 
 
 
