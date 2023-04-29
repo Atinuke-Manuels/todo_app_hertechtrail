@@ -123,7 +123,7 @@ addMeBtn.addEventListener('click', function(event) {
     updateLocalStorage();
     taskInput.value = '';
   }
-
+updateLocalStorage();
     //to update the count of active tasks
   updateTaskCount();
 });
@@ -179,9 +179,44 @@ function updateTaskCount() {
         taskCountElement.textContent = taskCount;
 }
 
+// This helps display all completed tasks.
+function showCompletedTasks() {
+  const taskItems = document.querySelectorAll('.task-item');
+
+  taskItems.forEach(taskItem => {
+    const checkbox = taskItem.querySelector('input[type="checkbox"]');
+    const label = taskItem.querySelector('label');
+
+    if (checkbox.checked) {
+      taskItem.style.display = 'flex';
+    } else {
+      taskItem.style.display = 'none';
+    }
+  });
+}
+
+//To show all task again
+function showAllTasks() {
+  const taskItems = document.querySelectorAll('.task-item');
+  taskItems.forEach(task => {
+    task.style.display = 'flex';
+  });
+}
 
 
-
+function showCompleted() {
+  const taskItems = document.querySelectorAll('.task-item');
+  taskItems.forEach(task => {
+    const checkbox = task.querySelector('input[type="checkbox"]');
+    const label = task.querySelector('label');
+    if (checkbox.checked) {
+      task.style.display = 'none';
+    } else {
+      task.style.display = 'flex';
+    }
+  });
+  showAllTasks();
+}
 
 
 

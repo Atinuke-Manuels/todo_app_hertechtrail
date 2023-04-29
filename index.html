@@ -30,12 +30,12 @@
     <ul   class = "task-list"></ul>
     <div  class = "controls">
     <div  class = "filters">
-    <span id    = "active" ></span><span>Items left</span>
-    <span id    = "all" class              = "active" style = "margin-left: 3rem;">All</span>
-    <span id    = "completed">Completed</span>
-    <span id    = "clearCompleted" onclick = "clearCheckedTasks()">Clear Completed</span>
+    <span id    = "active" ></span><span title="Display count of items left">Items left</span>
+    <span id    = "all" onclick="showAllTasks()" title="Display all" style = "margin-left: 3rem;">All</span>
+    <span id    = "completed" onclick="showCompletedTasks() " title="Display Completed">Completed</span>
+    <span id    = "clearCompleted" onclick = "clearCheckedTasks()" title="Clear all completed tasks">Clear Completed</span>
       </div>
-      <button class = "clear-all-btn">Clear All</button>
+      <button class = "clear-all-btn" title="Clear all tasks">Clear All</button>
     </div>
   </form>
   </Section>
